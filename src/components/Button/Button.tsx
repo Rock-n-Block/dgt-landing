@@ -2,8 +2,6 @@ import { FC, PropsWithChildren, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'clsx';
 
-import { Loader } from '@/assets/img';
-
 import s from './styles.module.scss';
 
 export interface ButtonProps {
@@ -15,6 +13,7 @@ export interface ButtonProps {
   loading?: boolean;
   to?: string;
   href?: string;
+  target?: string;
 }
 
 /**
@@ -41,6 +40,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   disabled,
   loading,
   href,
+  target,
   to,
 }) => {
   const button = (
@@ -53,7 +53,6 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     >
       {startIcon && <span className={s.startIcon}>{startIcon}</span>}
       {children}
-      {loading && <Loader className={s.loader} />}
     </button>
   );
 
@@ -69,7 +68,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
         type="button"
         className={cn(s.link, className)}
         href={href}
-        target="_blank"
+        target={target || '_blank'}
         rel="noreferrer noopener"
       >
         {button}

@@ -16,6 +16,7 @@ enum Types {
   sub2 = 'p',
   label1 = 'p',
   label2 = 'p',
+  label3 = 'p',
 }
 
 export interface TypographyProps {
@@ -24,17 +25,7 @@ export interface TypographyProps {
   weight?: 'normal' | 'medium' | 'semiBold' | 'bold';
   height?: number | string;
   spacing?: number | string;
-  color?:
-    | 'default'
-    | 'white'
-    | 'accent'
-    | 'label1'
-    | 'label2'
-    | 'details'
-    | 'pink'
-    | 'blue'
-    | 'gray'
-    | 'purple';
+  color?: 'white' | 'black' | 'red' | 'grey';
   isUpper?: boolean;
   className?: string;
 }
@@ -62,6 +53,13 @@ export interface TypographyProps {
  * * sub2 = p / 12px,
  * * label1 = p / 11px,
  * * label2 = p / 10px,
+ * @param height
+ * @param spacing
+ * @param color
+ * @param isUpper
+ * @param className
+ * @param children
+ * @param rest
  */
 export const Typography: FC<PropsWithChildren<TypographyProps>> = ({
   type,

@@ -2,5 +2,143 @@
 @import '/src/styles/mixins';
 
 .headerWrapper {
-  padding-top: 30px;
+  padding: 10px 5px 0 33px;
+  width: 100%;
+  @include flex(row, space-between, flex-start,  no-wrap);
+
+  @include b(tablet) {
+    padding: 10px 5px;
+  }
+
+  .logo {
+    margin-top: 6px;
+    @include flex(row, flex-start, flex-start, no-wrap);
+    gap: 17px;
+
+    @include b(tablet) {
+      margin-top: 2px;
+      gap: 9px;
+    }
+
+    &_icon {
+      margin-top: 8px;
+
+      @include b(tablet) {
+        margin-top: 0;
+      }
+    }
+
+    &_title {
+      font-size: 44px;
+      line-height: 53px;
+      font-weight: 700;
+
+      @include b(tablet) {
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+
+    &_subtitle {
+      margin-left: 2px;
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 400;
+
+      @include b(tablet) {
+        margin: 0;
+        font-size: 9px;
+        line-height: 11px;
+      }
+    }
+  }
+
+  .nav {
+    @include flex(row, center, flex-end, no-wrap);
+    gap: 15px;
+
+    @include b(tablet) {
+      display: none;
+    }
+
+    &_link {
+      background: $white;
+      border-radius: 30px;
+    }
+
+    &_black {
+      padding: 0;
+      width: 35px;
+      height: 35px;
+      background: $black;
+
+      &:hover, &:active {
+        background: $red !important;
+      }
+
+      svg {
+        margin-right: 2px;
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+
+  .nav_burger {
+    display: none;
+
+    @include b(tablet) {
+      @include flex(row, center, center);
+      width: 36px;
+      height: 36px;
+      background: $white;
+      border-radius: 50%;
+    }
+  }
+
+  .nav_modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    width: 100vw;
+    height: 100vh;
+    background: $bgNavModal;
+    animation: slide-in 0.5s;
+
+    @keyframes slide-in {
+      from {
+        right: -100%;
+        opacity: 0;
+      }
+
+      to {
+        right: 0;
+        opacity: 1;
+      }
+    }
+
+    @include b(tablet) {
+      @include flex(column, flex-start, flex-end, no-wrap);
+      gap: 20px;
+    }
+
+    a {
+      flex-grow: 0;
+    }
+
+    .nav_close {
+      background: $black;
+      width: 36px;
+      height: 36px;
+    }
+
+    .black_link button {
+      background: $black;
+      color: $white;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
 }

@@ -12,10 +12,14 @@
 
   // variants
   &.filled {
-    color: $black;
+    color: $white;
     @include text-control(32px, 38px);
     background: $red;
     border: none;
+
+    @include b(tablet) {
+      @include text-control(18px, 22px);
+    }
   }
   &.outlined {
     color: $black;
@@ -30,6 +34,10 @@
     color: $black;
     @include text-control(24px, 29px);
     text-decoration-line: underline;
+
+    @include b(tablet) {
+      @include text-control(16px, 19px);
+    }
   }
 
   // animations

@@ -1,0 +1,165 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.packages {
+  margin-top: 150px;
+  padding: 80px 0 80px 40px;
+  background: $bgGradient;
+
+  @include b(tablet) {
+    margin: 40px -20px 0;
+    padding: 60px 20px 0;
+  }
+
+  .title {
+    @include b(tablet) {
+      @include flex(row, flex-start, center, no-wrap);
+    }
+
+    &_second_row {
+      margin-top: 20px;
+      margin-right: 138px;
+      text-align: right;
+
+      @include b(tablet) {
+        margin: 0;
+        text-align: left;
+      }
+
+      span {
+        color: $red;
+      }
+    }
+  }
+
+  .bg_image {
+    position: absolute;
+    right: 353px;
+    z-index: 0;
+
+    @include b(tablet) {
+      width: 300px;
+      right: 0;
+    }
+  }
+
+  .subtitle {
+    position: relative;
+    z-index: 2;
+    margin-top: 80px;
+    width: 500px;
+
+    @include b(tablet) {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+
+  .scrollbar {
+    &_header {
+      margin: 60px 0 20px;
+    }
+
+    &_nav {
+      height: min-content;
+      background: transparent;
+    }
+
+    &_container {
+      width: 1285px;
+      min-height: 762px;
+      overflow-x: hidden;
+
+      @include b(tablet) {
+        width: 100vw;
+        min-height: 518px;
+        overflow-x: scroll;
+      }
+    }
+
+    &_scroll {
+      width: 1461px;
+      min-height: 100%;
+
+      .list_item + .list_item {
+        border-left: 1px solid $lightGrey;
+      }
+
+      @include b(tablet) {
+        width: 1120px;
+      }
+    }
+  }
+
+  .list_item {
+    padding: 41px;
+    width: 365px;
+    min-height: 100%;
+    background: $white;
+
+    @include b(tablet) {
+      padding: 15px;
+      width: 280px;
+    }
+
+    &:hover, &:active {
+      background: $bgPacksSliderHover;
+    }
+
+    &_subtitle {
+      margin-top: 8px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid $lightGrey;
+      color: $red;
+    }
+
+    &_content {
+      margin-top: 32px;
+      min-height: 538px;
+      @include flex(column, space-between, flex-start, no-wrap);
+
+      .features {
+        @include flex(column, flex-start, flex-start, no-wrap);
+        gap: 36px;
+      }
+
+      .get_started_button {
+        margin: 78px auto 0;
+
+        @include b(tablet) {
+          margin-top: 69px;
+        }
+      }
+    }
+  }
+}
+
+.links {
+  position: relative;
+
+  &_text {
+    margin-top: 40px;
+    width: 700px;
+    font-size: 48px;
+    line-height: 58px;
+    color: $red;
+
+    @include b(tablet) {
+      width: 100%;
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+
+  img {
+    position: absolute;
+    z-index: 1;
+    top: -100px;
+    right: 0;
+
+    @include b(tablet) {
+      width: 370px;
+      top: 100px;
+    }
+  }
+}

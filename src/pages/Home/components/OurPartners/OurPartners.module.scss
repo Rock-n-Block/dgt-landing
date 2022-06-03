@@ -1,0 +1,54 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.partners {
+  margin-top: 150px;
+
+  @include b(tablet) {
+    margin-top: 60px;
+  }
+
+  .title {
+    @include b(tablet) {
+      @include flex(row, flex-start, center, no-wrap);
+    }
+  }
+
+  .list {
+    margin-top: 40px;
+    @include grid(repeat(6, 1fr), repeat(3, 1fr), 20px);
+    justify-items: center;
+
+    @include b(desktop) {
+      @include grid(repeat(5, 1fr), repeat(auto-fill, 1fr), 20px);
+    }
+
+    @include b(1150) {
+      @include grid(repeat(4, 1fr), repeat(auto-fill, 1fr), 20px);
+    }
+
+    @include b(645) {
+      @include grid(repeat(3, 1fr), repeat(auto-fill, 1fr), 20px);
+    }
+
+    @include b(488) {
+      @include grid(repeat(2, 1fr), repeat(auto-fill, 1fr), 20px);
+    }
+
+    &_item {
+      width: 190px;
+      height: 120px;
+      @include flex(row, center, center);
+      border: 1px solid $grey2;
+
+      @include b(tablet) {
+        width: 135px;
+        height: 80px;
+
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+}

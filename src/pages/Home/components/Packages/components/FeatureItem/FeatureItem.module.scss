@@ -1,0 +1,37 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.feature {
+  min-height: 25px;
+  @include flex(row, flex-start, flex-start, no-wrap);
+  gap: 16px;
+
+  &_icon {
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  &_name {
+    padding: 0 !important;
+    font-size: 18px !important;
+    line-height: 22px !important;
+    font-weight: 500 !important;
+    text-align: left;
+
+    @include b(tablet) {
+      font-size: 16px !important;
+      line-height: 19px !important;
+    }
+  }
+
+  &_description {
+    margin-top: 4px;
+    @include text-control(16px, 19px, 400);
+    color: $grey;
+
+    span {
+      color: $red;
+      font-weight: 700;
+    }
+  }
+}

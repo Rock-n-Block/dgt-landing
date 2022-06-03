@@ -1,10 +1,10 @@
-import { Dashboard } from '@/pages';
+import { Home } from '@/pages';
 
 export const routes = [
   {
-    name: 'Dashboard',
+    name: 'Home',
     path: '/',
-    component: <Dashboard />,
+    component: <Home />,
     isMenu: true,
   },
 ];

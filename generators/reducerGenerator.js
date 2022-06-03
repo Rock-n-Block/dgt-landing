@@ -5,7 +5,7 @@ const actionTypesPath = (reducerName) => `../src/store/${reducerName}/actionType
 const sagaPath = (reducerName) => `../src/store/${reducerName}/sagas/exampleSaga.ts`;
 const sagasIndexPath = (reducerName) => `../src/store/${reducerName}/sagas/index.ts`;
 const reducerTypePath = (reducerName) => `../src/types/store/${reducerName}.ts`;
-const storeTypesPath = '../src/types/store/index.ts';
+const storeTypesPath = '../src/types/store/Scrollbar.tsx';
 const storeRootReducer = '../src/store/rootReducer.ts';
 const storeRootSaga = '../src/store/rootSaga.ts';
 

@@ -6,7 +6,7 @@
   line-height: 80%;
   font-weight: 500;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 40px;
     line-height: 100%;
     font-weight: 400;
@@ -17,7 +17,7 @@
   line-height: 80%;
   font-weight: 500;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 40px;
     line-height: 100%;
     font-weight: 400;
@@ -28,7 +28,7 @@
   line-height: 82%;
   font-weight: 500;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 36px;
     line-height: 80%;
   }
@@ -38,7 +38,7 @@
   line-height: 82%;
   font-weight: 500;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 18px;
     line-height: 100%;
   }
@@ -46,12 +46,11 @@
 .h5 {
   font-size: 50px;
   line-height: 110%;
-  font-weight: 500;
+  font-weight: 400;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 28px;
     line-height: 110%;
-    font-weight: 400;
   }
 }
 .h6 {
@@ -59,7 +58,7 @@
   line-height: 53px;
   font-weight: 400;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 22px;
     line-height: 26px;
   }
@@ -69,7 +68,7 @@
   line-height: 48px;
   font-weight: 400;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 16px;
     line-height: 19px;
   }
@@ -79,7 +78,7 @@
   line-height: 29px;
   font-weight: 400;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 16px;
     line-height: 19px;
   }
@@ -89,7 +88,7 @@
   line-height: 32px;
   font-weight: 400;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 16px;
     line-height: 19px;
   }
@@ -99,7 +98,7 @@
   line-height: 22px;
   font-weight: 500;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 16px;
     line-height: 19px;
   }
@@ -114,7 +113,7 @@
   line-height: 22px;
   font-weight: 400;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 16px;
     line-height: 19px;
   }
@@ -124,7 +123,7 @@
   line-height: 17px;
   font-weight: 400;
 
-  @include b(mobile) {
+  @include b(tablet) {
     font-size: 12px;
     line-height: 14px;
   }

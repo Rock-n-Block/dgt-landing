@@ -1,0 +1,79 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+.scrollbar {
+  position: relative;
+  z-index: 2;
+
+  &_packages {
+    @include b(tablet) {
+      margin-left: -20px;
+    }
+  }
+
+  &_header {
+    @include flex(row, space-between, flex-start, no-wrap);
+  }
+
+  &_nav {
+    @include flex(row, center, center, no-wrap);
+    gap: 16px;
+    width: 210px;
+    height: 69px;
+    background: $white;
+    border-radius: $borderRadius;
+
+    @include b(tablet) {
+      display: none;
+    }
+
+    button {
+      padding: 0 !important;
+
+      &:hover, &:active {
+        background: transparent !important;
+      }
+    }
+
+    .disabled {
+      path {
+        opacity: 0.1;
+      }
+    }
+  }
+
+  &_reveal_btn {
+    margin-right: 10px;
+    @include text-control(24px, 29px, 400);
+  }
+
+  &_list {
+    margin-top: 11px;
+    overflow-x: hidden;
+
+    @include b(tablet) {
+      overflow-x: scroll;
+    }
+  }
+
+  &_scroll {
+    @include flex(row, flex-start, flex-start, no-wrap);
+    transition: ease-in 0.5s;
+  }
+
+  .scroll_to_end {
+    transform: translateX(-(2181px - 1325px));
+
+    @include b(desktop) {
+      transform: translateX(calc(100vw - 2281px));
+    }
+  }
+
+  .scroll_to_end_packages {
+    transform: translateX(1300px - 1461px);
+
+    @include b(desktop) {
+      transform: translateX(calc(100vw - 1120px));
+    }
+  }
+}

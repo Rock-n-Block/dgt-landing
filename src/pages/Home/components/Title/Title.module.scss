@@ -1,0 +1,67 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.bg_image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+
+  @include b(tablet) {
+    width: 138px;
+  }
+}
+
+.title {
+  margin-left: -15px;
+
+  @include b(tablet) {
+    margin-left: 0;
+  }
+
+  &_text {
+    margin-bottom: 64px;
+
+    @include b(tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .subtitle {
+    &_desktop {
+      line-height: 57px;
+      max-width: 766px;
+      font-size: 32px;
+      font-weight: 400;
+
+      @include b(tablet) {
+        display: none;
+      }
+
+      svg {
+        position: relative;
+        top: 10px;
+      }
+    }
+
+    &_mobile {
+      display: none;
+
+      @include b(tablet) {
+        display: block;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+
+    &_mark {
+      padding: 0 20px;
+      height: 57px;
+      width: min-content;
+      background: $white;
+      border: 1px solid $grey;
+      border-radius: 30px;
+      color: $red;
+    }
+  }
+}

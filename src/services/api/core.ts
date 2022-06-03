@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-import { isMainnet } from '@/config/constants';
+import { IS_PRODUCTION } from '@/config';
 
-axios.defaults.baseURL = isMainnet ? '' : '';
+axios.defaults.baseURL = IS_PRODUCTION ? '' : '';
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 

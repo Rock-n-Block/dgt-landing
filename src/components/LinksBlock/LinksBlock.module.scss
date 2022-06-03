@@ -1,0 +1,22 @@
+@import "src/styles/mixins";
+
+.links {
+  margin-top: 60px;
+  @include flex(row, flex-start, center, no-wrap);
+  gap: 30px;
+
+  @include b(extramobile) {
+    margin-top: 20px;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    gap: 10px;
+
+    button {
+      width: 100%;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+}
