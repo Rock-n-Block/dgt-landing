@@ -1,0 +1,83 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.button {
+  padding: 10px 40px;
+  border-radius: $borderRadius;
+  border: 1px solid;
+  transition: 0.4s ease;
+  @include flex(row, center, center);
+  font-family: 'Roobert', sans-serif;
+  font-weight: 400;
+
+  // variants
+  &.filled {
+    color: $black;
+    @include text-control(32px, 38px);
+    background: $red;
+    border: none;
+  }
+  &.outlined {
+    color: $black;
+    @include text-control(18px, 22px);
+    background: $bgMain;
+    border-color: $black;
+  }
+  &.text {
+    padding: 10px;
+    background: transparent;
+    border: none;
+    color: $black;
+    @include text-control(24px, 29px);
+    text-decoration-line: underline;
+  }
+
+  // animations
+  &:hover:not(:disabled),
+  &:active,
+  &:focus-visible {
+    &.filled {
+      background: $redHover;
+      box-shadow: $shadowButton;
+    }
+    &.outlined {
+      border-color: $red;
+      color: $red;
+    }
+    &.text {
+      color: $red;
+      background: $bgGrey;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    &.filled {
+      background: $bgButtonGrey;
+      border-color: $darkGrey;
+      color: $darkGrey;
+    }
+    &.outlined {
+      border-color: $grey;
+      color: $grey;
+    }
+    &.text {
+      color: $grey;
+    }
+  }
+}
+
+.link {
+  flex-grow: 1;
+}
+
+.startIcon {
+  margin-right: 8px;
+  display: inline-flex;
+}
+
+.loader {
+  margin-left: 8px;
+  height: 26px;
+}
