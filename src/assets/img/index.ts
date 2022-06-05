@@ -19,6 +19,7 @@ export { ReactComponent as RubicLogo } from './icons/rubic.svg';
 export { ReactComponent as AlgebraLogo } from './icons/algebra.svg';
 export { ReactComponent as MyWishLogo } from './icons/mywish.svg';
 export { ReactComponent as RnBLogo } from './icons/rnb.svg';
+export { ReactComponent as WhatsAppIcon } from './icons/whatsapp.svg';
 export { default as BgFirstImage } from './bg1.png';
 export { default as BgSecondImage } from './bg2.png';
 export { default as BgThirdImage } from './bg3.png';

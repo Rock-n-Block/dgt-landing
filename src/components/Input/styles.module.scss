@@ -3,10 +3,12 @@
 
 .inputWrapper {
   position: relative;
+  height: 81px;
+  background: $white;
 }
 
 .input {
-  border-radius: $borderRadius;
+  border-radius: 0;
   padding: 17px 20px;
   border: none;
   color: $black;
@@ -16,12 +18,15 @@
   width: 100%;
   font-family: inherit;
 
-  &:disabled {
-    opacity: 0.6;
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
   }
 
-  &:hover {
-    box-shadow: $shadowButton;
+  &:disabled {
+    opacity: 0.6;
   }
 
   &.withIcon {
@@ -34,22 +39,6 @@
   &.white {
     background: #fff;
   }
-  &.rounded {
-    border-radius: 20px;
-    height: 40px;
-    font-size: 16px;
-    & + .startIcon {
-      bottom: -4px;
-    }
-  }
-
-  &:focus {
-    padding: 17px 20px;
-    box-shadow: $shadowButton;
-  }
-  &:focus + .startIcon {
-    transform: translateY(-50%) scale(0);
-  }
 }
 
 .labelWrapper {
@@ -61,10 +50,6 @@
 }
 .label,
 .labelEnd {
-  font-size: 14px;
-  line-height: 17px;
-  font-weight: 500;
-  color: $black;
   text-transform: uppercase;
 }
 

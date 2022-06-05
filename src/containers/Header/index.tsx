@@ -1,19 +1,33 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
+import cn from 'clsx';
 
 import { BurgerIcon, CloseIcon, LogoIcon, TelegramIcon } from '@/assets/img';
 import { Button, Typography } from '@/components';
+import { useWindowState } from '@/hooks/useWindowState';
 
 import s from './Header.module.scss';
 
 const Header: FC = () => {
   const [isNavModalOpen, setIsNavModalOpen] = useState(false);
+  const windowSize = useWindowState();
 
-  const handleOpenNavModal = () => setIsNavModalOpen(true);
+  const handleOpenNavModal = () => {
+    setIsNavModalOpen(true);
+    if (windowSize.width <= 1024) document.body.style.overflow = 'hidden';
+  };
 
-  const handleCloseNavModal = () => setIsNavModalOpen(false);
+  const handleCloseNavModal = () => {
+    setIsNavModalOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  useEffect(() => {
+    if (windowSize.width > 1024) document.body.style.overflow = 'unset';
+    if (windowSize.width <= 1024 && isNavModalOpen) document.body.style.overflow = 'hidden';
+  }, [isNavModalOpen, windowSize.width]);
 
   return (
-    <div className={s.headerWrapper}>
+    <div className={cn(s.headerWrapper, isNavModalOpen && s.no_scroll)}>
       <div className={s.logo}>
         <LogoIcon className={s.logo_icon} />
         <div>
@@ -38,7 +52,7 @@ const Header: FC = () => {
         <Button variant="text" href="#contact-us" className={s.nav_link}>
           Contact us
         </Button>
-        <Button variant="text" href="" className={s.nav_black}>
+        <Button variant="text" href="tg://resolve?domain=@axeinos" className={s.nav_black}>
           <TelegramIcon />
         </Button>
       </div>

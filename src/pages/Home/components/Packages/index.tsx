@@ -39,26 +39,24 @@ export const Packages: FC = () => {
                 {item.subtitle}
               </Typography>
               <div className={s.list_item_content}>
-                <div className={s.features}>
-                  {item.features.map((feature) => (
-                    <FeatureItem
-                      key={feature.name}
-                      isIncluded={feature.isIncluded}
-                      name={feature.name}
-                      description={feature.description}
-                      isRevealed={isRevealed}
-                    />
-                  ))}
-                </div>
-                <Button
-                  variant="outlined"
-                  className={s.get_started_button}
-                  href="#contact-us"
-                  target="_self"
-                >
-                  Get Started
-                </Button>
+                {item.features.map((feature) => (
+                  <FeatureItem
+                    key={feature.name}
+                    isIncluded={feature.isIncluded}
+                    name={feature.name}
+                    description={feature.description}
+                    isRevealed={isRevealed}
+                  />
+                ))}
               </div>
+              <Button
+                variant="outlined"
+                className={s.get_started_button}
+                href="#contact-us"
+                target="_self"
+              >
+                Get Started
+              </Button>
             </div>
           ))}
         </Scrollbar>

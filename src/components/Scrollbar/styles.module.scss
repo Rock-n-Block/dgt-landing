@@ -70,10 +70,10 @@
   }
 
   .scroll_to_end_packages {
-    transform: translateX(1300px - 1461px);
+    transform: translateX(1300px - 1480px);
 
     @include b(desktop) {
-      transform: translateX(calc(100vw - 1120px));
+      transform: translateX(calc(calc(100vw - 140px) - 1460px));
     }
   }
 }

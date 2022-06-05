@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import cn from 'clsx';
 
 import { ExcludeIcon, IncludeIcon } from '@/assets/img';
 import { Button, Typography } from '@/components';
@@ -21,7 +22,9 @@ export const FeatureItem: FC<FeatureItemProps> = ({
   return (
     <div className={s.feature}>
       {isIncluded ? (
-        <IncludeIcon className={s.feature_icon} />
+        <div className={cn(s.include, s.feature_icon)}>
+          <IncludeIcon />
+        </div>
       ) : (
         <ExcludeIcon className={s.feature_icon} />
       )}

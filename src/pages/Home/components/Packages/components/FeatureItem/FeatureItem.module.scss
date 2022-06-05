@@ -34,4 +34,16 @@
       font-weight: 700;
     }
   }
+
+  .include {
+    width: 24px;
+    height: 24px;
+    @include flex(row, center, center);
+    border: 1px solid $red;
+    border-radius: 50%;
+
+    svg {
+      margin-right: 2px;
+    }
+  }
 }

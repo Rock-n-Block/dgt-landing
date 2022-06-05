@@ -54,7 +54,7 @@
   }
 
   .nav {
-    @include flex(row, center, flex-end, no-wrap);
+    @include flex(row, flex-end, center, no-wrap);
     gap: 15px;
 
     @include b(tablet) {
@@ -67,13 +67,16 @@
     }
 
     &_black {
-      padding: 0;
-      width: 35px;
-      height: 35px;
-      background: $black;
+      button {
+        padding: 0;
+        width: 35px;
+        height: 35px;
+        background: $black;
+        border-radius: 50%;
 
-      &:hover, &:active {
-        background: $red !important;
+        &:hover, &:active {
+          background: $red !important;
+        }
       }
 
       svg {
@@ -98,9 +101,11 @@
 
   .nav_modal {
     display: none;
-    position: absolute;
+    position: fixed;
+    z-index: 999;
     top: 0;
     right: 0;
+    overflow-y: hidden;
     padding: 10px 20px;
     width: 100vw;
     height: 100vh;
@@ -139,6 +144,14 @@
       color: $white;
       font-size: 24px;
       line-height: 29px;
+    }
+  }
+}
+
+.no_scroll {
+  @include b(tablet) {
+    body {
+      overflow: hidden;
     }
   }
 }

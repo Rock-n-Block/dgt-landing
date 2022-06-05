@@ -1,27 +1,27 @@
-import { FC, ReactElement, useCallback } from 'react';
+import { ChangeEvent, FC, ReactElement, useCallback } from 'react';
 import cn from 'clsx';
 
 import s from './styles.module.scss';
 
 export interface InputProps {
-  onChange: (newValue: string) => void;
+  onChange: (e: ChangeEvent) => void;
+  id: string;
+  type?: 'input' | 'textarea';
   value: string;
   color?: 'gray' | 'white';
   placeholder?: string;
   label?: ReactElement | string;
-  labelEnd?: ReactElement | string;
-  variant?: 'default' | 'rounded';
   startIcon?: ReactElement | string;
   loading?: boolean;
   disabled?: boolean;
-  onlyNumbers?: boolean;
   className?: string;
-  labelEndClassName?: string;
   inputClassName?: string;
 }
 
 /**
  * @param className
+ * @param id
+ * @param type
  * @param value
  * @param {(newValue: string) => void} [onChange] - function which will be called when value has been changed
  * @param {'white' | 'gray'} [color = 'gray'] - main color
@@ -33,57 +33,50 @@ export interface InputProps {
  * @param {string | ReactElement} [labelEnd] - label at the end
  * @param {boolean} [loading] - if loading then input has a <Loader /> svg
  * @param {boolean} [disabled] - if input disabled
- * @param {boolean} [onlyNumbers] - validate only numbers with regExp
- * @param {'default' | 'rounded'} [variant = 'gray'] - main color
- * * default - height = 56px, border-radius = 10px
- * * rounded - height = 40px, border-radius = 20px
- * @param labelEndClassName
  * @param inputClassName
  */
 export const Input: FC<InputProps> = ({
   className,
+  id,
+  type = 'input',
   value,
   onChange,
   label,
   startIcon,
   loading,
   disabled,
-  color = 'gray',
-  variant = 'default',
-  labelEnd,
-  onlyNumbers,
+  color = 'white',
   placeholder = '',
-  labelEndClassName,
   inputClassName,
 }) => {
-  const handleChangeInput = useCallback(
-    (changeValue: string) => {
-      if (!onlyNumbers) onChange(changeValue);
-    },
-    [onlyNumbers, onChange],
-  );
+  const handleChangeInput = useCallback((e: ChangeEvent) => onChange(e), [onChange]);
 
   return (
     <div className={cn(s.inputWrapper, className)}>
-      {(label || labelEnd) && (
+      {label && (
         <div className={s.labelWrapper}>
           <span className={cn(s.label)}>{label}</span>
-          <span className={cn(s.labelEnd, labelEndClassName)}>{labelEnd}</span>
         </div>
       )}
-      <input
-        placeholder={placeholder}
-        value={value}
-        disabled={disabled || loading}
-        onChange={(e) => handleChangeInput(e.target.value)}
-        className={cn(
-          s.input,
-          s[color],
-          s[variant],
-          { [s.withIcon]: startIcon || loading },
-          inputClassName,
-        )}
-      />
+      {type === 'input' ? (
+        <input
+          id={id}
+          placeholder={placeholder}
+          value={value}
+          disabled={disabled || loading}
+          onChange={handleChangeInput}
+          className={cn(s.input, s[color], { [s.withIcon]: startIcon || loading }, inputClassName)}
+        />
+      ) : (
+        <textarea
+          id={id}
+          placeholder={placeholder}
+          value={value}
+          disabled={disabled || loading}
+          onChange={handleChangeInput}
+          className={cn(s.input, s[color], inputClassName)}
+        />
+      )}
       <span className={cn(s.startIcon)}>{startIcon}</span>
     </div>
   );
