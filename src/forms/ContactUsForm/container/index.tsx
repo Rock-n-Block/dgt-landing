@@ -35,6 +35,9 @@ export const ContactUsForm: FC = () => {
     productStage: '',
   };
 
+  const phoneRegExp =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
   const FormWithFormik = withFormik<any, ContactUsFormProps>({
     enableReinitialize: true,
     mapPropsToValues: () => props,
@@ -42,7 +45,7 @@ export const ContactUsForm: FC = () => {
       name: Yup.string().min(2, 'Too short').max(20, 'Too long').required('Please set your name'),
       contact: Yup.string()
         .min(3, 'Too short')
-        .max(20, 'Too long')
+        .max(20, 'Too long').matches(phoneRegExp, 'Phone number is not valid')
         .required('Please add your contact data'),
     }),
 
@@ -61,6 +64,7 @@ export const ContactUsForm: FC = () => {
           setIsSuccessBookOpen(true);
         }
       } catch (e) {
+        alert(e);
         clogData('Submit contact form', e);
       }
     },

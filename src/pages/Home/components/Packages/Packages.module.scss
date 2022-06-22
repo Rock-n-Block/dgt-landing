@@ -1,6 +1,11 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
 
+.bg{
+  z-index: -1;
+  pointer-events: none;
+}
+
 .packages {
   position: relative;
   margin-right: -15px;

@@ -68,7 +68,7 @@ export const Packages: FC = () => {
           Reach out and we’ll make sure it happens
         </Typography>
         <LinksBlock />
-        <img src={BgFourthImage} alt="background 4" />
+        <img className={s.bg} src={BgFourthImage} alt="background 4" />
       </div>
     </>
   );
