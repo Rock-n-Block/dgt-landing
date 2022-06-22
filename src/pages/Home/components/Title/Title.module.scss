@@ -54,9 +54,15 @@
       }
     }
 
+    &_text{
+      line-height: 48px;
+      margin: 12px 0;
+    }
+
     &_mark {
+      display: inline-block;
       padding: 0 20px;
-      height: 57px;
+      height: 54px;
       width: min-content;
       background: $white;
       border: 1px solid $grey;

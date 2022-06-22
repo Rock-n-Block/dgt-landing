@@ -1,0 +1,103 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.wrapper {
+  margin-top: 64px;
+  padding-left: 85px;
+  min-height: 120vh;
+  position: relative;
+
+  @include b(tablet) {
+    margin-top: 48px;
+    padding: 0 5px;
+  }
+  .content {
+    @include flex(row, flex-start, flex-start, nowrap);
+    @include b(tablet){
+      padding: 0 15px;
+      @include flex(column, flex-start, flex-start, nowrap);
+    }
+    .detail {
+      position: absolute;
+      z-index: -1;
+      bottom: -120%;
+      left: -5%;
+      @include b(tablet){
+        display: none;
+      }
+    }
+    .company {
+      flex: 0 0 60%;
+      &_title {
+        @include text-control(50px, 75px, normal);
+        margin-bottom: 48px;
+        @include b(tablet){
+          @include text-control(38px, 42px, normal);
+          margin-bottom: 32px;
+        }
+      }
+      &_info {
+        @include flex(row, flex-start, flex-start, wrap);
+      }
+    }
+  }
+}
+
+.block {
+  flex: 0 0 50%;
+  padding-bottom: 50px;
+  @include b(tablet){
+    padding-bottom: 25px;
+  }
+  @include b(extramobile){
+    flex: 0 0 75%;
+  }
+  &_title {
+    @include text-control(18px, 22px, normal);
+  }
+  &_line {
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: $red;
+    margin: 6px 0;
+  }
+  &_text {
+    @include text-control(18px, 22px, normal);
+  }
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  background: $black;
+  border-radius: 50%;
+  padding: 6px;
+  @include flex(row, center, center);
+  @include b(1024) {
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+  }
+}
+
+.social {
+  &_wrapper {
+    padding-bottom: 32px;
+    @include flex(row, flex-start, center);
+    @include b(1024) {
+      padding-bottom: 6px;
+    }
+  }
+  &_name {
+    margin-left: 10px;
+    @include b(tablet) {
+      @include text-control(16px, 20px);
+    }
+  }
+}

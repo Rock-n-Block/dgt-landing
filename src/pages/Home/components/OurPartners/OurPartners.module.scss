@@ -14,7 +14,7 @@
 
   .title {
     @include b(tablet) {
-      @include flex(row, flex-start, center, no-wrap);
+      @include flex(row, flex-start, center);
     }
   }
 

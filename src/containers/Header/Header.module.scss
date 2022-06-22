@@ -12,16 +12,15 @@
 
   .logo {
     margin-top: 6px;
-    @include flex(row, flex-start, flex-start, no-wrap);
-    gap: 17px;
+    @include flex(column, flex-start, flex-start, no-wrap);
 
     @include b(tablet) {
       margin-top: 2px;
-      gap: 9px;
     }
 
     &_icon {
       margin-top: 8px;
+      margin-bottom: 8px;
 
       @include b(tablet) {
         margin-top: 0;

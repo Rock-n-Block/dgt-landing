@@ -1,0 +1,60 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.wrapper {
+  margin: 64px 0 150px;
+  padding-left: 85px;
+
+  .content {
+    max-width: 1000px;
+    .title {
+      @include text-control(100px, 80px, 500);
+      margin: 130px 0 80px;
+    }
+    .first_block {
+      margin-bottom: 40px;
+    }
+    .date {
+      margin-bottom: 10px;
+    }
+    .second_block,
+    .fourth_block,
+    .fifth_block {
+      margin: 60px 0 10px;
+    }
+    .third_block {
+      margin: 60px 0 40px;
+    }
+  }
+}
+
+@include b(tablet) {
+  .wrapper {
+    margin: 48px 0 60px;
+    padding: 0 15px;
+    .content {
+      .title {
+        @include text-control(54px, 50px, 500);
+        margin: 40px 0 30px;
+      }
+      .first_block {
+        margin-bottom: 40px;
+      }
+      .date {
+        margin-bottom: 10px;
+      }
+      .second_block,
+      .fourth_block,
+      .fifth_block {
+        margin: 60px 0 10px;
+      }
+      .third_block {
+        margin: 60px 0 40px;
+      }
+    }
+  }
+}
+
+.link {
+  color: $red;
+}

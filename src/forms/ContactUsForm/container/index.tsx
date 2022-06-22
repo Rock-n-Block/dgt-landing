@@ -1,14 +1,21 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 
 import { ContactUsFormComponent } from '@/forms/ContactUsForm/component';
+import APIs from '@/services/api';
+import { ISendRequest } from '@/services/api/types';
 import { clogData } from '@/utils';
+
+import { SuccessBookModal } from '../modals';
+
+export const availableContacts = ['Telegram', 'WhatsApp'] as const;
+export type TAvailableContacts = typeof availableContacts[number];
 
 export type ContactUsFormProps = {
   name: string;
   contact: string;
-  contactType: string;
+  contactType: TAvailableContacts;
   description: string;
   interests: Set<string>;
   productType: string;
@@ -16,6 +23,8 @@ export type ContactUsFormProps = {
 };
 
 export const ContactUsForm: FC = () => {
+  const [isSuccessBookOpen, setIsSuccessBookOpen] = useState(false);
+
   const props: ContactUsFormProps = {
     name: '',
     contact: '',
@@ -30,29 +39,27 @@ export const ContactUsForm: FC = () => {
     enableReinitialize: true,
     mapPropsToValues: () => props,
     validationSchema: Yup.object().shape({
-      name: Yup.string()
-        .min(3, 'Too short')
-        .max(20, 'Too long')
-        .required('Please select an answer'),
+      name: Yup.string().min(2, 'Too short').max(20, 'Too long').required('Please set your name'),
       contact: Yup.string()
         .min(3, 'Too short')
         .max(20, 'Too long')
-        .required('Please select an answer'),
-      description: Yup.string().min(3, 'Too short').required('Please select an answer'),
-      interests: Yup.array().min(1, 'Please select an answer'),
-      type: Yup.string().required('Please select an answer'),
-      stage: Yup.string().required('Please select an answer'),
+        .required('Please add your contact data'),
     }),
 
     handleSubmit: async (values) => {
       try {
-        const formData = new FormData();
-        formData.append('name', values.name);
-        formData.append('contact', values.contact);
-        formData.append('contact_type', values.contactType);
-        formData.append('interests', Array.from(values.interests).join(', '));
-        formData.append('type', values.productType);
-        formData.append('stage', values.productStage);
+        const data: ISendRequest = {
+          name: values.name,
+          contact: `${values.contactType}: ${values.contact}`,
+          message: values.description,
+          interest: '',
+          type: values.productType,
+          stage: values.productStage,
+        };
+        const response = await APIs.emails.sendRequest(data);
+        if (response.status === 200) {
+          setIsSuccessBookOpen(true);
+        }
       } catch (e) {
         clogData('Submit contact form', e);
       }
@@ -60,5 +67,10 @@ export const ContactUsForm: FC = () => {
 
     displayName: 'ContactUsForm',
   })(ContactUsFormComponent);
-  return <FormWithFormik />;
+  return (
+    <>
+      <FormWithFormik />
+      <SuccessBookModal isOpen={isSuccessBookOpen} setIsOpen={setIsSuccessBookOpen} />
+    </>
+  );
 };

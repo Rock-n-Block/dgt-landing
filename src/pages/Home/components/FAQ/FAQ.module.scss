@@ -1,0 +1,79 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.wrapper {
+  max-width: 1220px;
+  padding: 0 15px;
+  .title {
+    margin-top: 150px;
+    margin-bottom: 80px;
+    @include b(mobile) {
+      margin-top: 70px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.head_wrapper {
+  font-family: 'Roobert';
+  padding: 32px 0;
+  @include flex(row, flex-start, flex-start);
+  @include b(mobile) {
+    padding: 20px 0;
+  }
+  .head_wrapper {
+    &_q {
+      margin-right: 32px;
+      @include text-control(32px, 36px);
+      @include b(mobile) {
+        margin-right: 8px;
+        @include text-control(18px, 22px);
+      }
+    }
+    &_question {
+      flex: 0 0 80%;
+      @include text-control(32px, 36px);
+      @include b(mobile) {
+        @include text-control(18px, 22px);
+      }
+    }
+    &_arrow {
+      margin-left: auto;
+      .arrow {
+        transition: 400ms ease-in-out;
+        color: $black;
+        &.active {
+          color: $red;
+          transform: rotate(-90deg);
+        }
+        @include b(mobile) {
+            max-width: 11px;
+        }
+      }
+    }
+  }
+}
+
+.body_underline {
+  border-bottom: 1px solid $grey;
+}
+
+.body_wrapper {
+  padding-bottom: 32px;
+  @include b(mobile) {
+      padding-bottom: 20px;
+  }
+  &_content {
+    padding-left: 66px;
+    max-width: 1000px;
+    @include b(mobile) {
+      padding-left: 25px;
+    }
+  }
+  &_paragraph {
+    @include text-control(24px, 40px);
+    @include b(mobile) {
+      @include text-control(18px, 22px);
+    }
+  }
+}

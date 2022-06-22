@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 import cn from 'clsx';
 
 import { ExcludeIcon, IncludeIcon } from '@/assets/img';
@@ -19,6 +19,18 @@ export const FeatureItem: FC<FeatureItemProps> = ({
   description,
   isRevealed,
 }) => {
+  const [localRevealed, setLocalRevealed] = useState(false);
+
+  useEffect(() => {
+    setLocalRevealed(isRevealed);
+  }, [isRevealed]);
+
+  const revealedClickHandler = useCallback(() => {
+    if (isIncluded) {
+      setLocalRevealed((state) => !state);
+    }
+  }, [isIncluded]);
+
   return (
     <div className={s.feature}>
       {isIncluded ? (
@@ -29,10 +41,15 @@ export const FeatureItem: FC<FeatureItemProps> = ({
         <ExcludeIcon className={s.feature_icon} />
       )}
       <div>
-        <Button variant="text" className={s.feature_name}>
+        <Button
+          disabled={!isIncluded}
+          onClick={revealedClickHandler}
+          variant="text"
+          className={s.feature_name}
+        >
           {name}
         </Button>
-        {isRevealed && (
+        {localRevealed && isIncluded && (
           <Typography type="label3" className={s.feature_description}>
             {description}
           </Typography>

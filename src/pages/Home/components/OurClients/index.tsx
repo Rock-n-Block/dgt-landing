@@ -7,7 +7,7 @@ import { clients } from '@/pages/Home/components/OurClients/OurClients.mock';
 import s from './OurClients.module.scss';
 
 export const OurClients: FC = () => (
-  <div className={s.clients}>
+  <div id="clients" className={s.clients}>
     <div className={s.title}>
       <Typography type="h3">Our&nbsp;</Typography>
       <Typography type="h3" color="red">

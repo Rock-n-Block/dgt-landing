@@ -12,7 +12,7 @@ export const Packages: FC = () => {
 
   return (
     <>
-      <div className={s.packages}>
+      <div id="packages" className={s.packages}>
         <div className={s.title}>
           <Typography type="h2">What&nbsp;</Typography>
           <Typography type="h2" className={s.title_second_row}>
@@ -52,7 +52,7 @@ export const Packages: FC = () => {
               <Button
                 variant="outlined"
                 className={s.get_started_button}
-                href="#contact-us"
+                to="#contact-us"
                 target="_self"
               >
                 Get Started

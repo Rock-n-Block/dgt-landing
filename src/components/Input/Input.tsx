@@ -61,7 +61,7 @@ export const Input: FC<InputProps> = ({
       {type === 'input' ? (
         <input
           id={id}
-          placeholder={placeholder}
+          placeholder={!label ? placeholder : ''}
           value={value}
           disabled={disabled || loading}
           onChange={handleChangeInput}
@@ -70,7 +70,7 @@ export const Input: FC<InputProps> = ({
       ) : (
         <textarea
           id={id}
-          placeholder={placeholder}
+          placeholder={!label ? placeholder : ''}
           value={value}
           disabled={disabled || loading}
           onChange={handleChangeInput}

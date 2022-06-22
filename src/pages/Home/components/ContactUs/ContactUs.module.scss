@@ -9,16 +9,21 @@
 
   @include b(tablet) {
     margin: 70px -20px 0;
-    padding: 60px 20px 40px;
+    padding: 60px 30px 40px;
   }
 
   .title {
     @include b(tablet) {
-      @include flex(row, flex-start, center, no-wrap);
+      @include flex(row, flex-start, flex-start);
     }
 
     .second_row {
       color: $red;
+      position: relative;
+      left: -8px;
+      @include b(tablet){
+        left: 0
+      }
     }
   }
 

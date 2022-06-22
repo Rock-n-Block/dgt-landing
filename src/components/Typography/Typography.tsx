@@ -78,6 +78,7 @@ export const Typography: FC<PropsWithChildren<TypographyProps>> = ({
     letterSpacing: spacing && `${spacing}em`,
     textTransform: isUpper && 'uppercase',
   };
+
   const props = {
     className: cn(
       s.typography,

@@ -1,7 +1,9 @@
 import { FC } from 'react';
 
 import {
+  AboutUs,
   ContactUs,
+  FAQ,
   OurClients,
   OurPartners,
   Packages,
@@ -16,9 +18,11 @@ const Home: FC = () => {
     <div className={s.homeWrapper}>
       <Title />
       <WhatWeDoBest />
+      <AboutUs />
       <Packages />
       <OurClients />
       <OurPartners />
+      <FAQ />
       <ContactUs />
     </div>
   );

@@ -7,7 +7,7 @@ import { items } from '@/pages/Home/components/WhatWeDoBest/WhatWeDoBest.mock';
 import s from './WhatWeDoBest.module.scss';
 
 export const WhatWeDoBest: FC = () => (
-  <div className={s.what_best}>
+  <div id="services" className={s.what_best}>
     <img className={s.bg_image} src={BgSecondImage} alt="background 2" />
     <Typography type="h2">What We</Typography>
     <Typography type="h2">

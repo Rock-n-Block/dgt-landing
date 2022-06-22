@@ -3,8 +3,8 @@
 
 .inputWrapper {
   position: relative;
-  height: 81px;
   background: $white;
+  border-bottom: 1px solid $grey;
 }
 
 .input {
@@ -12,11 +12,17 @@
   padding: 17px 20px;
   border: none;
   color: $black;
-  font-size: 18px;
-  font-weight: 500;
   transition: 0.4s ease;
   width: 100%;
   font-family: inherit;
+  resize: none;
+  @include text-control(24px, 30px);
+  &::placeholder{
+    color: $grey;
+  }
+  @include b(mobile){
+    @include text-control(18px, 22px);
+  }
 
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
@@ -42,6 +48,11 @@
 }
 
 .labelWrapper {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
   @include flex(row, space-between, center, wrap);
   margin-bottom: 7px;
   @include b(530) {
@@ -50,7 +61,7 @@
 }
 .label,
 .labelEnd {
-  text-transform: uppercase;
+  @include text-control(24px, 30px);
 }
 
 .startIcon {
@@ -70,5 +81,16 @@
     width: 24px;
     height: 24px;
     color: black;
+  }
+}
+
+textarea {
+  &.input{
+    min-height: 180px;
+  }
+  @include b(mobile){
+    &.input{
+      min-height: 84px;
+    }
   }
 }

@@ -2,14 +2,29 @@
 
 .links {
   margin-top: 60px;
+  background: linear-gradient(80.1deg, #EFEFEF 10.5%, #FFFFFF 27.01%, #F0F0F0 47%, #F2F2F2 62.22%, #FFFFFF 85.25%, #DBDBDB 93.94%);
+  padding: 32px 50px;
+  width: fit-content; 
   @include flex(row, flex-start, center, no-wrap);
-  gap: 30px;
+  border-radius: 120px;
+
+  .mr{
+    margin-right: 30px;
+  }
+
+  @include b(tablet){
+    margin-top: 40px;
+    padding: 0;
+    background: transparent;
+  }
 
   @include b(extramobile) {
     margin-top: 20px;
     justify-content: center;
     flex-wrap: wrap-reverse;
-    gap: 10px;
+    .mr{
+      margin-right: 10px;
+    }
 
     button {
       width: 100%;

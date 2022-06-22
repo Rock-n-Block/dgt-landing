@@ -3,6 +3,7 @@ import cn from 'clsx';
 
 import { BurgerIcon, CloseIcon, LogoIcon, TelegramIcon } from '@/assets/img';
 import { Button, Typography } from '@/components';
+import { socials } from '@/consts/socials';
 import { useWindowState } from '@/hooks/useWindowState';
 
 import s from './Header.module.scss';
@@ -31,28 +32,25 @@ const Header: FC = () => {
       <div className={s.logo}>
         <LogoIcon className={s.logo_icon} />
         <div>
-          <Typography type="body1" className={s.logo_title}>
-            DGT
-          </Typography>
           <Typography type="body1" className={s.logo_subtitle}>
             by Rock&apos;n&apos;Block
           </Typography>
         </div>
       </div>
       <div className={s.nav}>
-        <Button variant="text" href="#services" className={s.nav_link}>
+        <Button variant="text" to="#services" className={s.nav_link}>
           Services
         </Button>
-        <Button variant="text" href="#packages" className={s.nav_link}>
+        <Button variant="text" to="#packages" className={s.nav_link}>
           Packages
         </Button>
-        <Button variant="text" href="#clients" className={s.nav_link}>
+        <Button variant="text" to="#clients" className={s.nav_link}>
           Clients & Partners
         </Button>
-        <Button variant="text" href="#contact-us" className={s.nav_link}>
+        <Button variant="text" to="#contact-us" className={s.nav_link}>
           Contact us
         </Button>
-        <Button variant="text" href="tg://resolve?domain=@axeinos" className={s.nav_black}>
+        <Button variant="text" href={socials.telegram} className={s.nav_black}>
           <TelegramIcon />
         </Button>
       </div>
@@ -70,16 +68,16 @@ const Header: FC = () => {
           <Button variant="text" onClick={handleCloseNavModal} className={s.nav_close}>
             <CloseIcon />
           </Button>
-          <Button variant="filled" href="#services" target="_self" className={s.black_link}>
+          <Button variant="filled" href="/#services" target="_self" className={s.black_link}>
             Services
           </Button>
-          <Button variant="filled" href="#packages" target="_self" className={s.black_link}>
+          <Button variant="filled" href="/#packages" target="_self" className={s.black_link}>
             Packages
           </Button>
-          <Button variant="filled" href="#clients" target="_self" className={s.black_link}>
+          <Button variant="filled" href="/#clients" target="_self" className={s.black_link}>
             Clients & Partners
           </Button>
-          <Button variant="filled" href="#contact-us" target="_self" className={s.black_link}>
+          <Button variant="filled" href="/#contact-us" target="_self" className={s.black_link}>
             Contact us
           </Button>
         </div>

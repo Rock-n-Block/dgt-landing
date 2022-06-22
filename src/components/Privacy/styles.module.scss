@@ -1,0 +1,60 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixins';
+
+.docs {
+  &_title {
+    @include text-control(50px, 75px, 500);
+  }
+  &_subtitle {
+    @include text-control(26px, 32px, 500);
+  }
+  &_text {
+    @include text-control(24px, 28px);
+    margin-bottom: 40px;
+  }
+}
+
+.block {
+  &_title {
+    margin: 40px 0 10px;
+  }
+}
+
+.list {
+  &_wrapper {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 40px;
+  }
+  &_element {
+    padding-left: 4px;
+    &_content {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+@include b(tablet) {
+  .docs {
+    &_title {
+      @include text-control(34px, 38px, 500);
+    }
+    &_subtitle {
+      @include text-control(22px, 24px, 500);
+    }
+    &_text {
+      @include text-control(20px, 22px);
+      margin-bottom: 20px;
+    }
+  }
+  .list {
+      &_wrapper{
+          margin-bottom: 20px;
+      }
+  }
+  .block {
+    &_title {
+      margin: 40px 0 10px;
+    }
+  }
+}
