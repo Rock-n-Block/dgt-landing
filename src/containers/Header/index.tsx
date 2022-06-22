@@ -38,16 +38,16 @@ const Header: FC = () => {
         </div>
       </div>
       <div className={s.nav}>
-        <Button variant="text" to="#services" className={s.nav_link}>
+        <Button variant="text" to="/#services" className={s.nav_link}>
           Services
         </Button>
-        <Button variant="text" to="#packages" className={s.nav_link}>
+        <Button variant="text" to="/#packages" className={s.nav_link}>
           Packages
         </Button>
-        <Button variant="text" to="#clients" className={s.nav_link}>
+        <Button variant="text" to="/#clients" className={s.nav_link}>
           Clients & Partners
         </Button>
-        <Button variant="text" to="#contact-us" className={s.nav_link}>
+        <Button variant="text" to="/#contact-us" className={s.nav_link}>
           Contact us
         </Button>
         <Button variant="text" href={socials.telegram} className={s.nav_black}>
