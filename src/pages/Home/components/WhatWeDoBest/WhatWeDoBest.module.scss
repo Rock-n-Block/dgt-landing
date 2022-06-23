@@ -50,6 +50,10 @@
     &_container {
       width: 1325px;
 
+      @media screen and (min-width:1440px) {
+        width: 100%;
+      }
+
       @include b(desktop) {
         width: calc(100vw - 100px);
       }

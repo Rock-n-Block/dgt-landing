@@ -64,6 +64,7 @@ export const ContactUsForm: FC = () => {
           setIsSuccessBookOpen(true);
         }
       } catch (e) {
+        console.log(e);
         alert(e);
         clogData('Submit contact form', e);
       }
