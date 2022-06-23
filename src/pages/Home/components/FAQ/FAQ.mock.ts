@@ -36,4 +36,11 @@ export const faq: TFaq[] = [
       'We use metrics such as ROI, ER, CPA, etc.  We monitor and measure each action to ensure that campaigns are working. The best way to evaluate the effectiveness of marketing is to correlate the cost of promotion with the profit of a company or project. In our case, the total capitalization of our clients is in excess of $1 Billion.',
     ],
   },
+  {
+    question: 'What is Web3 marketing?',
+    answer: [
+      'Web3 Marketing is a concept that leans into building a strong community, making it a priority. The idea is that users will decide to promote and support the projects they’re most interested in, instead of being in the passenger seat. Like the concept of blockchain and its decentralization, Web3 is all about redistributing power to users.',
+      'We will help you create a marketing action plan that will help you build a strong community of investors and ambassadors who are ready to pick out your project from others.',
+    ],
+  },
 ];
