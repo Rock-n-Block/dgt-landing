@@ -2,8 +2,8 @@
 @import '/src/styles/mixins';
 
 .h1 {
-  font-size: 220px;
-  line-height: 80%;
+  font-size: 120px;
+  line-height: 100%;
   font-weight: 500;
 
   @include b(tablet) {
@@ -13,7 +13,7 @@
   }
 }
 .h2 {
-  font-size: 220px;
+  font-size: 120px;
   line-height: 80%;
   font-weight: 500;
 
@@ -24,7 +24,7 @@
   }
 }
 .h3 {
-  font-size: 140px;
+  font-size: 120px;
   line-height: 82%;
   font-weight: 500;
 

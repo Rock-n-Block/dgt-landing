@@ -20,13 +20,12 @@
   .title {
     max-width: 1440px;
     @include b(tablet) {
-      @include flex(row, flex-start, center, no-wrap);
+      @include flex(column, flex-start, flex-start, nowrap);
     }
 
     &_second_row {
       margin-top: 20px;
-      margin-right: 138px;
-      text-align: right;
+      margin-left: 100px;
 
       @include b(tablet) {
         margin: 0;
@@ -95,7 +94,7 @@
 
     &_scroll {
       width: 1461px;
-      @include flex(row, flex-start , center, nowrap);
+      @include flex(row, flex-start , flex-start, nowrap);
 
       @media screen and (min-width: 1440px){
         width: 100%;
