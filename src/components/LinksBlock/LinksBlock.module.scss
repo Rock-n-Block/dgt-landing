@@ -5,7 +5,7 @@
   background: linear-gradient(80.1deg, #EFEFEF 10.5%, #FFFFFF 27.01%, #F0F0F0 47%, #F2F2F2 62.22%, #FFFFFF 85.25%, #DBDBDB 93.94%);
   padding: 32px 50px;
   width: fit-content; 
-  @include flex(row, flex-start, center, no-wrap);
+  @include flex(row, flex-start, center, nowrap);
   border-radius: 120px;
 
   .mr{
@@ -18,20 +18,24 @@
     background: transparent;
   }
 
-  @include b(extramobile) {
+  @include b(mobile) {
+    width: 100%;
     margin-top: 20px;
-    justify-content: center;
-    flex-wrap: wrap-reverse;
+    @include flex(column-reverse, flex-start, center);
     .mr{
       margin-right: 10px;
     }
 
-    button {
-      width: 100%;
-    }
-
     svg {
       display: none;
+    }
+  }
+  @include b(extramobile){
+    a{
+      width: 100%;
+      button{
+        width: 100%;
+      }
     }
   }
 }

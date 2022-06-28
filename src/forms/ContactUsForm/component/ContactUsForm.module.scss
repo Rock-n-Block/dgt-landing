@@ -31,6 +31,7 @@
     color: $red;
   }
   .terms {
+    margin-top: 10px;
     @include flex(row, flex-start, center);
     &_text {
       color: $grey;

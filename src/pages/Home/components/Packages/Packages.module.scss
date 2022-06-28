@@ -64,7 +64,7 @@
 
   .scrollbar {
     &_header {
-      margin: 60px 0 20px;
+      margin: 60px 10px 20px;
       max-width: 1440px;
     }
 
@@ -83,7 +83,7 @@
       }
 
       @include b(desktop) {
-        width: calc(100vw - 140px);
+        width: 100%;
       }
 
       @include b(tablet) {
@@ -95,7 +95,7 @@
 
     &_scroll {
       width: 1461px;
-      @include grid(repeat(4, 1fr), 1fr, 0);
+      @include flex(row, flex-start , center, nowrap);
 
       @media screen and (min-width: 1440px){
         width: 100%;
@@ -114,7 +114,7 @@
   .list_item {
     position: relative;
     padding: 41px;
-    width: 365px;
+    flex: 0 0 380px;
     min-height: 100%;
     background: $white;
 
@@ -124,11 +124,21 @@
 
     @include b(tablet) {
       padding: 15px;
-      width: 280px;
+      flex: 0 0 280px;
+    }
+
+    &_title{
+      white-space: nowrap;
     }
 
     &:hover, &:active {
       background: $bgPacksSliderHover;
+      .get_started_button{
+        button{
+          color: $redHover;
+          border: 1px solid $redHover;
+        }
+      }
     }
 
     &_subtitle {
@@ -145,16 +155,6 @@
     }
 
     .get_started_button {
-      position: absolute;
-      bottom: 41px;
-      width: 283px;
-
-      @include b(tablet) {
-        bottom: 15px;
-        margin-top: 69px;
-        width: 250px;
-      }
-
       button {
         width: 100%;
         margin: 78px auto 0;

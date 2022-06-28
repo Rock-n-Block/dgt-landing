@@ -1,5 +1,5 @@
-@import "src/styles/mixins";
-@import "src/styles/variables";
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
 
 .partners {
   position: relative;
@@ -9,7 +9,7 @@
 
   @include b(tablet) {
     margin-top: 60px;
-    padding-right: 0;
+    padding: 10px;
   }
 
   .title {
@@ -40,13 +40,12 @@
     }
 
     &_item {
-      width: 190px;
-      height: 120px;
+      width: 100%;
+      min-height: 140px;
       @include flex(row, center, center);
       border: 1px solid $grey2;
 
       @include b(tablet) {
-        width: 135px;
         height: 80px;
 
         img {
@@ -55,4 +54,8 @@
       }
     }
   }
+}
+
+.reveal_button{
+  margin: 10px auto;
 }

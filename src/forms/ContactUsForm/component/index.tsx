@@ -44,7 +44,7 @@ export const ContactUsFormComponent: FC<FormikProps<ContactUsFormProps>> = ({
   isSubmitting,
 }) => {
   return (
-    <Form name="contact-us" className={s.form}>
+    <Form className={s.form}>
       <div className={s.form_row}>
         <Field
           id="name"

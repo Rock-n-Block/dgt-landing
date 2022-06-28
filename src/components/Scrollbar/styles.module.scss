@@ -59,21 +59,6 @@
   &_scroll {
     @include flex(row, flex-start, flex-start, no-wrap);
     transition: ease-in 0.5s;
-  }
-
-  .scroll_to_end {
-    transform: translateX(-(2181px - 1325px));
-
-    @include b(desktop) {
-      transform: translateX(calc(100vw - 2281px));
-    }
-  }
-
-  .scroll_to_end_packages {
-    transform: translateX(1300px - 1480px);
-
-    @include b(desktop) {
-      transform: translateX(calc(calc(100vw - 140px) - 1460px));
-    }
+    transform: translateX(calc(var(--left) * 1px));
   }
 }

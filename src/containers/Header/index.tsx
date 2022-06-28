@@ -47,6 +47,9 @@ const Header: FC = () => {
         <Button variant="text" to="/#clients" className={s.nav_link}>
           Clients & Partners
         </Button>
+        <Button variant="text" to="/#FAQ" className={s.nav_link}>
+          FAQ
+        </Button>
         <Button variant="text" to="/#contact-us" className={s.nav_link}>
           Contact us
         </Button>
@@ -73,6 +76,9 @@ const Header: FC = () => {
           </Button>
           <Button variant="filled" href="/#packages" target="_self" className={s.black_link}>
             Packages
+          </Button>
+          <Button variant="text" to="/#FAQ" className={s.black_link}>
+            FAQ
           </Button>
           <Button variant="filled" href="/#clients" target="_self" className={s.black_link}>
             Clients & Partners

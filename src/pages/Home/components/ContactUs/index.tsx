@@ -8,7 +8,7 @@ import { ContactUsForm } from '@/forms/ContactUsForm';
 import s from './ContactUs.module.scss';
 
 export const ContactUs: FC = () => (
-  <div className={s.contact_us}>
+  <div className={s.contact_us} id="contact-us">
     <div className={s.title}>
       <Typography type="h3">Get a special&nbsp;</Typography>
       <Typography type="h3" className={s.second_row}>

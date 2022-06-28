@@ -57,7 +57,7 @@ export const FAQ = () => {
     [],
   );
   return (
-    <div className={s.wrapper}>
+    <div className={s.wrapper} id="FAQ">
       <Typography className={s.title} type="h3">
         FAQ
       </Typography>

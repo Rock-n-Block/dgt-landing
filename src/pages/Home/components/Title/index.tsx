@@ -27,13 +27,10 @@ export const Title: FC = () => (
       </Typography>
       <Typography className={s.subtitle_text} type="body1">
         <RocketIcon />
-        &nbsp;Launch your&nbsp;<span className={s.subtitle_mark}>Crypto&nbsp;&&nbsp;NFT</span>
+        &nbsp;Launch marketing campaign for your&nbsp;<span className={s.subtitle_mark}>&nbsp;NFT</span>
         ,&nbsp;
         <span className={s.subtitle_mark}>GameFi</span>
-        &nbsp;&
-      </Typography>
-      <Typography className={s.subtitle_text} type="body1">
-        <span className={s.subtitle_mark}>DeFi</span>
+        &nbsp;& <span className={s.subtitle_mark}>DeFi</span>
         &nbsp;<span className={s.subtitle_mark}>MetaVerse</span>
         &nbsp;and more!
       </Typography>

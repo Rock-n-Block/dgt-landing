@@ -24,6 +24,7 @@ export { ReactComponent as ArrowDown } from './icons/arrow-down.svg';
 export { ReactComponent as ArrowRightDown } from './icons/arrow-right-down.svg';
 export { ReactComponent as EmailIcon } from './icons/email.svg';
 export { ReactComponent as PhoneIcon } from './icons/phone.svg';
+export { ReactComponent as BoldArrowIcon } from './icons/boldArrow.svg';
 export { default as BgFirstImage } from './bg1.png';
 export { default as BgSecondImage } from './bg2.png';
 export { default as BgThirdImage } from './bg3.png';

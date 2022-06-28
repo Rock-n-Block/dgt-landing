@@ -95,19 +95,20 @@ export const CustomDropdown: FC<CustomDropDownProps> = ({
 
   return (
     <div className={cn(s.container, wrapperClassName)}>
-      <div className={cn(s.wrapper, { [s.open]: isOpen })}>
-        <div className={s.head}>
-          <DropdownValue
-            onlyIcon={onlyIcon}
-            className={s.head_content}
-            value={value}
-            onClick={handleHeadClick}
-          />
+      <div ref={headRef} className={cn(s.wrapper, { [s.open]: isOpen })}>
+        <div
+          tabIndex={0}
+          role="button"
+          onKeyDown={() => {}}
+          onClick={handleHeadClick}
+          className={s.head}
+        >
+          <DropdownValue onlyIcon={onlyIcon} className={s.head_content} value={value} />
           <div className={cn(s.arrow)}>
             <ArrowDown />
           </div>
         </div>
-        <div className={s.body}>
+        <div ref={bodyRef} className={s.body}>
           {options.map((opt) => (
             <DropdownValue
               onlyIcon={onlyIcon}

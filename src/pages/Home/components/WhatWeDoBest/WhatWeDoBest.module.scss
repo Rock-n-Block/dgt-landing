@@ -45,12 +45,22 @@
       margin: 20px 0 40px;
     }
   }
+  @include b(mobile) {
+    h2 {
+      text-align: left;
+    }
+    .subtitle {
+      &_text {
+        text-align: left;
+      }
+    }
+  }
 
   .scroll {
     &_container {
       width: 1325px;
 
-      @media screen and (min-width:1440px) {
+      @media screen and (min-width: 1440px) {
         width: 100%;
       }
 
@@ -64,14 +74,8 @@
     }
 
     &_list {
-      width: 2181px;
-
       div + div {
         border-left: 1px solid $lightGrey;
-      }
-
-      @include b(tablet) {
-        width: 1560px;
       }
     }
   }
@@ -80,15 +84,17 @@
     padding: 40px 20px 20px;
     @include flex(column, flex-start, flex-start, no-wrap);
     gap: 40px;
-    width: 350px;
+    flex: 0 0 350px;
     height: 622px;
     background: $white;
     transition: ease-in 0.3s;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
       background: $black;
 
-      p, h5 {
+      p,
+      h5 {
         color: $white;
       }
     }

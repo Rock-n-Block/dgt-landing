@@ -34,7 +34,9 @@ export const Packages: FC = () => {
         >
           {items.map((item) => (
             <div key={item.title} className={s.list_item}>
-              <Typography type="h5">{item.title}</Typography>
+              <Typography className={s.list_item_title} type="h5">
+                {item.title}
+              </Typography>
               <Typography type="h6" color="red" className={s.list_item_subtitle}>
                 {item.subtitle}
               </Typography>

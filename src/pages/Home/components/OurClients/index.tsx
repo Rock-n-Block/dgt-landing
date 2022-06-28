@@ -16,13 +16,17 @@ export const OurClients: FC = () => (
     </div>
     <div className={s.list}>
       {clients.map((client) => (
-        <Button key={client.name} variant="outlined" href={client.href} className={s.client}>
-          <div className={s.client_logo}>{client.logo}</div>
-          <div className={s.client_name}>
-            <Typography type="h4">{client.name}</Typography>
-            <ArrowUpSingleIcon className={s.arrow} />
-          </div>
-        </Button>
+        <div key={client.name} className={s.list_item}>
+          <Button variant="outlined" href={client.href} className={s.client}>
+            <div className={s.client_logo}>{client.logo}</div>
+            <div className={s.client_name}>
+              <Typography className={s.client_name_name} type="h4">
+                {client.name}
+              </Typography>
+              <ArrowUpSingleIcon className={s.arrow} />
+            </div>
+          </Button>
+        </div>
       ))}
     </div>
   </div>

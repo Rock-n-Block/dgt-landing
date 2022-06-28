@@ -5,6 +5,7 @@
   position: relative;
   z-index: 2;
   .head {
+    cursor: pointer;
     background: $white;
     @include flex(row, space-between, center);
     .head_content {
@@ -52,11 +53,12 @@
   transition: 400ms ease-in-out;
   padding: 10px;
   @include flex(row, flex-start, center);
-  &:hover {
-    background: rgba($bgBlack, 0.2);
+  &:hover:not(:disabled) {
+    background: $lightGrey;
   }
   &:disabled {
-    background: rgba($bgBlack, 0.2);
+    cursor: not-allowed;
+    background: $grey2;
   }
   &_icon {
     margin-right: 10px;

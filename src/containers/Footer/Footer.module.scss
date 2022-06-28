@@ -25,6 +25,8 @@
       flex: 0 0 35%;
       @include flex(column, flex-end, flex-start);
       &_icon {
+        cursor: pointer;
+        margin-bottom: 20px;
         @include b(tablet) {
           display: none;
         }
@@ -78,14 +80,14 @@
   &:hover {
     .link {
       &_arrow {
-        transform: rotate(180deg) translateX(-4px);
+        transform: translateX(-4px);
       }
     }
   }
   &_arrow {
     max-width: 20px;
     transition: 300ms ease-in;
-    transform: rotate(180deg) translateX(0);
+    transform: translateX(0);
   }
   &_label {
     text-decoration: underline;
@@ -119,6 +121,10 @@
 }
 
 .social {
+  &s{
+    height: 100%;
+    padding-top: 16px;
+  }
   &_wrapper {
     padding-bottom: 32px;
     @include flex(row, flex-start, center);

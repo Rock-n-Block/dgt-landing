@@ -1,6 +1,7 @@
+import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ArrowLeftIcon, EmailIcon, LogoIcon, TelegramIcon, WhatsAppIcon } from '@/assets/img';
+import { BoldArrowIcon, EmailIcon, LogoIcon, TelegramIcon, WhatsAppIcon } from '@/assets/img';
 import { Typography } from '@/components';
 import { socials, TAvailableSocials } from '@/consts/socials';
 
@@ -9,6 +10,7 @@ import s from './Footer.module.scss';
 type TLink = {
   label: string;
   to: string;
+  outer?: boolean;
 };
 
 type TSocialLink = {
@@ -36,14 +38,17 @@ const links: TLink[] = [
   {
     label: 'Privacy Policy',
     to: '/privacy-policy',
+    outer: true,
   },
   {
     label: 'Terms of Service',
     to: '/terms',
+    outer: true,
   },
   {
     label: 'Company',
     to: '/company',
+    outer: true,
   },
 ];
 
@@ -65,14 +70,22 @@ const contactToIcon = {
   ),
 };
 
-const LinkComponent = ({ label, to }: TLink) => (
-  <Link className={s.link} to={to}>
-    <ArrowLeftIcon className={s.link_arrow} />
-    <Typography className={s.link_label} type="label2">
-      {label}
-    </Typography>
-  </Link>
-);
+const LinkComponent = ({ label, to, outer }: TLink) =>
+  outer ? (
+    <a href={to} className={s.link} target="_blank" rel="noreferrer">
+      <BoldArrowIcon className={s.link_arrow} />
+      <Typography className={s.link_label} type="label2">
+        {label}
+      </Typography>
+    </a>
+  ) : (
+    <Link className={s.link} to={to}>
+      <BoldArrowIcon className={s.link_arrow} />
+      <Typography className={s.link_label} type="label2">
+        {label}
+      </Typography>
+    </Link>
+  );
 
 const LinkToSocial = ({ href, social }: TSocialLink) => (
   <a className={s.social_wrapper} href={href.includes('@') ? `mailto:${href}` : href}>
@@ -84,11 +97,17 @@ const LinkToSocial = ({ href, social }: TSocialLink) => (
 );
 
 export const Footer = () => {
+  const onLogoClick = useCallback(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   return (
     <footer className={s.wrapper}>
       <div className={s.content}>
         <div className={s.logo}>
-          <LogoIcon className={s.logo_icon} />
+          <LogoIcon onClick={onLogoClick} className={s.logo_icon} />
           <div className={s.logo_copyright}>
             <Typography className={s.copyright} type="label2">
               © Copyright DGT {new Date().getFullYear()}
