@@ -37,15 +37,27 @@ export const ContactUsForm: FC = () => {
 
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+  const telegramRegExp = /@(?=\w{5,32}\b)[a-zA-Z0-9]+(?:_[a-zA-Z0-9]+)*/gm;
 
   const FormWithFormik = withFormik<any, ContactUsFormProps>({
     enableReinitialize: true,
     mapPropsToValues: () => props,
     validationSchema: Yup.object().shape({
       name: Yup.string().min(2, 'Too short').max(20, 'Too long').required('Please set your name'),
+      contactType: Yup.string(),
       contact: Yup.string()
         .min(3, 'Too short')
-        .max(20, 'Too long').matches(phoneRegExp, 'Phone number is not valid')
+        .max(20, 'Too long')
+        .when('contactType', {
+          is: (type: TAvailableContacts) => type === 'Telegram',
+          then: (contact) =>
+            contact.test(
+              'is-telegram',
+              'Telegram profile is not valid',
+              (c) => telegramRegExp.test(c || '') || phoneRegExp.test(c || ''),
+            ),
+          otherwise: (contact) => contact.matches(phoneRegExp, 'Phone number is not valid'),
+        })
         .required('Please add your contact data'),
     }),
 

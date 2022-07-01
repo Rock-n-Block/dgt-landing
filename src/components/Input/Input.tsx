@@ -5,6 +5,7 @@ import s from './styles.module.scss';
 
 export interface InputProps {
   onChange: (e: ChangeEvent) => void;
+  onBlur?: (e: any) => void;
   id: string;
   type?: 'input' | 'textarea';
   value: string;
@@ -41,6 +42,7 @@ export const Input: FC<InputProps> = ({
   type = 'input',
   value,
   onChange,
+  onBlur,
   label,
   startIcon,
   loading,
@@ -65,6 +67,7 @@ export const Input: FC<InputProps> = ({
           value={value}
           disabled={disabled || loading}
           onChange={handleChangeInput}
+          onBlur={onBlur}
           className={cn(s.input, s[color], { [s.withIcon]: startIcon || loading }, inputClassName)}
         />
       ) : (
@@ -74,6 +77,7 @@ export const Input: FC<InputProps> = ({
           value={value}
           disabled={disabled || loading}
           onChange={handleChangeInput}
+          onBlur={onBlur}
           className={cn(s.input, s[color], inputClassName)}
         />
       )}

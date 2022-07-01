@@ -38,6 +38,7 @@ export const ContactUsFormComponent: FC<FormikProps<ContactUsFormProps>> = ({
   touched,
   errors,
   handleChange,
+  handleBlur,
   values,
   setFieldValue,
   handleSubmit,
@@ -55,6 +56,7 @@ export const ContactUsFormComponent: FC<FormikProps<ContactUsFormProps>> = ({
                 className={cn(s.input, s.input_error)}
                 placeholder="Your Name"
                 onChange={handleChange}
+                onBlur={handleBlur}
                 value={values.name}
               />
               {touched.name && errors.name && (
@@ -74,6 +76,7 @@ export const ContactUsFormComponent: FC<FormikProps<ContactUsFormProps>> = ({
                 className={s.input}
                 placeholder="Your contact"
                 onChange={handleChange}
+                onBlur={handleBlur}
                 value={values.contact}
                 label={
                   !values.contact ? (

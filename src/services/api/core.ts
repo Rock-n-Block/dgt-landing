@@ -8,9 +8,7 @@ export const apiPoints = {
   },
 };
 
-axios.defaults.baseURL = IS_PRODUCTION
-  ? 'https://dev-api.digittee.io/'
-  : 'https://dev-api.digittee.io/';
+axios.defaults.baseURL = IS_PRODUCTION ? 'https://digittee.io/' : 'https://dev-api.digittee.io/';
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
