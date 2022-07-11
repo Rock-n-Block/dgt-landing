@@ -9,11 +9,13 @@ import s from './WhatWeDoBest.module.scss';
 export const WhatWeDoBest: FC = () => (
   <div id="services" className={s.what_best}>
     <img className={s.bg_image} src={BgSecondImage} alt="background 2" />
-    <Typography type="h2">What We</Typography>
-    <Typography type="h2">
-      Do&nbsp;
-      <span className={s.red_title}>Best</span>
-    </Typography>
+    <div className={s.title_container}>
+      <Typography className={s.title_item} type="h2">What We</Typography>
+      <Typography className={s.title_item} type="h2">
+        Do&nbsp;
+        <span className={s.red_title}>Best</span>
+      </Typography>
+    </div>
     <div className={s.subtitle}>
       <Typography type="body1" className={s.subtitle_text}>
         DGT provides the full turn-key marketing solutions for your project.

@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useState } from 'react';
+import { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { Button, Typography } from '@/components';
 import { useBreakpoints } from '@/hooks';
@@ -11,6 +11,7 @@ const onSinglePage = 6;
 const maxPages = Math.ceil(partners.length / onSinglePage);
 
 export const OurPartners: FC = () => {
+  const topAnchor = useRef<HTMLDivElement | null>(null);
   const [page, setPage] = useState(1);
 
   const [isMobile] = useBreakpoints([541]);
@@ -25,6 +26,11 @@ export const OurPartners: FC = () => {
   const revealHandleClick = useCallback(() => {
     if (page === maxPages) {
       setPage(1);
+      if (topAnchor.current) {
+        topAnchor.current.scrollIntoView({
+          behavior: 'auto',
+        });
+      }
     } else {
       setPage((state) => state + 1);
     }
@@ -38,7 +44,7 @@ export const OurPartners: FC = () => {
 
   return (
     <div className={s.partners}>
-      <div className={s.title}>
+      <div className={s.title} ref={topAnchor}>
         <Typography type="h3">Our</Typography>
         <Typography type="h3" color="red">
           Partners

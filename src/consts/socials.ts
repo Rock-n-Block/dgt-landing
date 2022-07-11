@@ -1,4 +1,4 @@
-export type TAvailableSocials = 'telegram' | 'whatsapp' | 'email';
+export type TAvailableSocials = 'telegram' | 'whatsApp' | 'email';
 
 type TSocials = {
   [key in TAvailableSocials]: string;
@@ -6,7 +6,7 @@ type TSocials = {
 
 export const socials: TSocials = {
   telegram: 'https://t.me/Axeinos',
-  whatsapp: 'https://wa.me/message/KKQJ2UYJOGL6J1',
+  whatsApp: 'https://wa.me/message/KKQJ2UYJOGL6J1',
   email: 'xenia@rocknblock.io',
 };
 

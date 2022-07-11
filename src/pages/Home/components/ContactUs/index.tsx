@@ -28,7 +28,7 @@ export const ContactUs: FC = () => (
         </div>
         <ArrowUpIcon className={s.arrow} />
       </Button>
-      <Button variant="text" href={socials.whatsapp} className={s.link}>
+      <Button variant="text" href={socials.whatsApp} className={s.link}>
         <div className={s.link_content}>
           <div className={s.link_logo}>
             <WhatsAppIcon className={s.whatsapp} />

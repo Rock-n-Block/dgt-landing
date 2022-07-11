@@ -24,8 +24,11 @@
     }
   }
 
-  h2 {
-    text-align: right;
+  .title_container{
+    @include flex(row, flex-end, center, wrap);
+    .title_item:not(:last-child){
+      margin-right: 10px;
+    }
   }
 
   .red_title {
@@ -46,8 +49,8 @@
     }
   }
   @include b(mobile) {
-    h2 {
-      text-align: left;
+    .title_container{
+      justify-content: flex-start;
     }
     .subtitle {
       &_text {

@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import cn from 'clsx';
 
 import { BgFourthImage, BgThirdImage } from '@/assets/img';
 import { Button, LinksBlock, Scrollbar, Typography } from '@/components';
@@ -14,10 +15,14 @@ export const Packages: FC = () => {
     <>
       <div id="packages" className={s.packages}>
         <div className={s.title}>
-          <Typography type="h2">What&nbsp;</Typography>
-          <Typography type="h2" className={s.title_second_row}>
-            We <span className={s.red}>Offer</span>
-          </Typography>
+          <div className={s.title_container}>
+            <Typography type="h2" className={s.title_item}>
+              What&nbsp;
+            </Typography>
+            <Typography type="h2" className={cn(s.title_item, s.title_second_row)}>
+              We <span className={s.red}>Offer</span>
+            </Typography>
+          </div>
         </div>
         <img src={BgThirdImage} alt="background 3" className={s.bg_image} />
         <Typography type="body1" className={s.subtitle}>

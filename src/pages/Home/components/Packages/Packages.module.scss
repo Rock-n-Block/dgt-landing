@@ -23,15 +23,18 @@
       @include flex(column, flex-start, flex-start, nowrap);
     }
 
-    &_second_row {
-      margin-top: 20px;
-      margin-left: 100px;
-
-      @include b(tablet) {
-        margin: 0;
-        text-align: left;
+    .title_container{
+      margin-right: 25px;
+      @include flex(row, flex-end, center, wrap);
+      .title_item:not(:last-child){
+        margin-right: 10px;
       }
+      @include b(tablet){
+        justify-content: flex-start;
+      }
+    }
 
+    &_second_row {
       span {
         color: $red;
       }

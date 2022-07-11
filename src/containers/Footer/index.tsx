@@ -58,7 +58,7 @@ const contactToIcon = {
       <TelegramIcon />
     </div>
   ),
-  whatsapp: (
+  whatsApp: (
     <div className={s.icon}>
       <WhatsAppIcon />
     </div>
