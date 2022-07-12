@@ -64,7 +64,9 @@ export const SuccessBookModal: FC<IModalProps> = ({ isOpen, setIsOpen }) => {
           <Button className={s.mr} variant="filled" href={`mailto:${helloSocials.email}`}>
             {helloSocials.email}
           </Button>
-          <ArrowUpIcon className={s.arrow} />
+          <Button variant="text" href={`mailto:${helloSocials.email}`}>
+            <ArrowUpIcon className={s.arrow} />
+          </Button>
         </div>
       </div>
     </AbstractModal>

@@ -14,6 +14,8 @@ export const LinksBlock: FC = () => (
     <Button className={s.mr} variant="filled" href={`mailto:${socials.email}`}>
       Contact us
     </Button>
-    <ArrowUpIcon />
+    <Button variant="text" href={`mailto:${socials.email}`}>
+      <ArrowUpIcon />
+    </Button>
   </div>
 );

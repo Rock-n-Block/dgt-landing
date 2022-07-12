@@ -141,7 +141,9 @@ export const ContactUsFormComponent: FC<FormikProps<ContactUsFormProps>> = ({
         >
           Submit Request
         </Button>
-        <ArrowUpIcon className={s.submit_arrow} />
+        <Button variant="text" onClick={handleSubmit}>
+          <ArrowUpIcon className={s.submit_arrow} />
+        </Button>
       </div>
     </Form>
   );
