@@ -26,8 +26,11 @@
 
   .title_container{
     @include flex(row, flex-end, center, wrap);
-    .title_item:not(:last-child){
-      margin-right: 10px;
+    .title-wrapper {
+      text-align: left;
+      .title_item:not(:last-child){
+        margin-right: 10px;
+      }
     }
   }
 
