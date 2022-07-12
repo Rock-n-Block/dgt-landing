@@ -64,6 +64,7 @@ export const Input: FC<InputProps> = ({
         <input
           id={id}
           placeholder={!label ? placeholder : ''}
+          autoComplete="Off"
           value={value}
           disabled={disabled || loading}
           onChange={handleChangeInput}
