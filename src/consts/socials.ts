@@ -11,6 +11,6 @@ export const socials: TSocials = {
 };
 
 export const helloSocials = {
-  email: 'hello@rocknblock.io',
+  email: 'xenia@rocknblock.io',
   phone: '+7 (812) 429-74-34',
 };
