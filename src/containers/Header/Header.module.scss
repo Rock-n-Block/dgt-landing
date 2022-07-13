@@ -126,7 +126,7 @@
 
     @include b(tablet) {
       @include flex(column, flex-start, flex-end, no-wrap);
-      gap: 20px;
+      gap: 17px;
     }
 
     a {
