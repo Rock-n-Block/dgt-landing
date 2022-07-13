@@ -15,7 +15,7 @@ type PackagesItem = {
 export const items: PackagesItem[] = [
   {
     title: 'Starter pack',
-    subtitle: '$5000<',
+    subtitle: '$5,000<',
     features: [
       {
         isIncluded: true,
